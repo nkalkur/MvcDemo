@@ -1,0 +1,47 @@
+﻿@model MvcDemo.Models.PickupDB
+
+@{ViewBag.Title = "Home Page";}
+
+<table id="ibutton">
+    <tr>
+        <td>
+            <h2>Pickup Service</h2>
+        </td>
+        <td>
+            <h2>Pickup Service</h2>
+        </td>
+        <td>
+            <h2>Pickup Service</h2>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Lets say you have a package. Say you need it to be delivered some place. No need to drag around load throughout the city, 
+    because we bring our services right upto your doorsteps.
+        </td>
+        <td>
+            Lets say you already ordered a pickup. Say you need to confirm the details of the order placed. 
+    Not to worry, you can check out your details through here.
+        </td>
+        <td>
+            Lets say you placed an order. Say it was picked up and delivered. Wouldn't you like to share your experience with us? 
+    Commends or complaints both will be gladly recieved.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Place Order", "Create", "Pickup")
+        </td>
+        <td>
+            @Html.ActionLink("Order Details", "Status", "Pickup")
+        </td>
+        <td>
+            OrderID:
+           <form action="@Url.Action("Complaint")" method="get">
+            
+                @Html.EditorFor(model => model.ID)
+                <input type="submit" value="Sure, why not?" />
+            </form>
+        </td>
+    </tr>
+</table>

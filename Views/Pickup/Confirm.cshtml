@@ -1,0 +1,16 @@
+﻿@model MvcDemo.Models.PickupDB
+
+@{
+    ViewBag.Title = "Confirm";
+}
+
+<h2>Confirmation</h2>
+
+<p>
+    Thankyou <strong>Mr. @Html.DisplayFor(model => model.firstn) @Html.DisplayFor(Model => Model.lastn)</strong> for choosing our service. 
+    Your order id is <strong>@Html.DisplayFor(model => Model.ID)</strong>. You can use the Order Id to edit or refurnish the details provided. 
+</p>
+
+<p style="text-align:center">
+    @Html.ActionLink("Place another order", "Create") | @Html.ActionLink("Edit details in this order", "Edit", new { id=Model.ID }) | @Html.ActionLink("Home", "Index", "Home")
+</p>

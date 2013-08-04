@@ -1,0 +1,67 @@
+﻿@model MvcDemo.Models.PickupDB
+
+@{
+    ViewBag.Title = "Date";
+}
+
+<h2>Date</h2>
+
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script src="@Url.Content("~/Scripts/jquery-ui-timepicker.js")" type="text/javascript"></script>
+  <link href="@Url.Content("~/Content/themes/base/jquery.ui.timepicker.css")" rel="stylesheet" type="text/javascript" />
+
+
+        <script>
+  $(function() {
+      $("#datepicker").datepicker({ minDate: 0, maxDate: "+1M +10D" });
+  
+  $("#timepicker").timepicker({
+      hourMin: 10,
+      hourMax: 18
+  });
+  });
+
+  function goBack()
+  {
+      window.history.back()
+  }
+  </script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>PickupDB</legend>
+       <p>Lock-in the date and time so that we can schedule the pickup.</p>
+        <table> 
+            <tr> 
+                <td> <div>
+                    @Html.LabelFor(model => model.date) 
+                    @Html.TextBoxFor(model => Model.date, new { id = "datepicker" }) <br />
+                    @Html.ValidationMessageFor(model => model.date)                   
+                     </div>
+                </td>
+
+                <td>
+                    <div style="position:relative; left:300px">
+                        @Html.LabelFor(model => model.time) 
+                        @Html.TextBoxFor(model => Model.time, new { id = "timepicker" }) <br />
+                        @Html.ValidationMessageFor(model => model.time)                        
+                    </div> 
+                </td>
+            </tr>
+        </table>
+        <p style="text-align:center">
+            @Html.LabelFor(model => model.weight) 
+            @Html.TextBoxFor(model => Model.weight) <br />
+            @Html.ValidationMessageFor(model => model.weight)            
+        </p>
+        <p>
+            <input type="submit" value="Create" /><input type="button" value="Back" onclick="goBack()" style="height:28px">
+        </p>
+
+    </fieldset>
+}

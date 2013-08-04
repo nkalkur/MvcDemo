@@ -1,0 +1,38 @@
+﻿
+@model MvcDemo.Models.PickupDB
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PickupDB</legend>
+
+    <table>
+        <tr> <th>First Name: </th>  <td>@Html.DisplayFor(model => model.firstn)</td> </tr>
+
+        <tr> <th>Last Name: </th> <td>@Html.DisplayFor(model => model.lastn)</td> </tr>
+
+        <tr> <th>Contact Number: </th> <td>@Html.DisplayFor(model => model.number)</td> </tr>
+
+        <tr> <th>Email address: </th> <td>@Html.DisplayFor(model => model.email)</td> </tr>
+
+        <tr> <th>Pickup Address: </th> <td>@Html.DisplayFor(model => model.address)</td> </tr>
+
+        <tr> <th>Postal Code: </th> <td>@Html.DisplayFor(model => model.pincode)</td> </tr>
+
+        <tr> <th>Date: </th> <td>@Html.DisplayFor(model => model.date)</td> </tr>
+
+        <tr> <th>Time: </th> <td>@Html.DisplayFor(model => model.time)</td> </tr>
+
+        <tr> <th>Weight: </th> <td>@Html.DisplayFor(model => model.weight)</td> </tr>
+    </table>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Track Another", "Status") |
+    @Html.ActionLink("Cancel Order", "Delete", new { id=Model.ID }) 
+</p>

@@ -1,0 +1,13 @@
+﻿@model MvcDemo.Models.PickupDB
+
+
+@{
+    ViewBag.Title = "Status";
+}
+
+<h2>Check Status here</h2>
+@using (Html.BeginForm("Details", "Pickup"))
+{
+    @Html.EditorFor(model => model.ID)
+    <input type="submit" value="Go" />
+}  

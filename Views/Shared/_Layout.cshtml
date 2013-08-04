@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>@ViewBag.Title</title>
+<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")"></script>
+<script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")"></script>
+</head>
+<body>
+    <div id="wrapper">
+         <div id="header">
+         <img src="@Url.Content("~/Content/logo.jpg")" /> 
+            <h1>India Post</h1>
+         </div>
+        <ul id="menu">
+<li>@Html.ActionLink("Home", "Index", "Home")</li>
+<li>@Html.ActionLink("Parcel","")
+    <ul>
+        <li>@Html.ActionLink("Pickup", "Create", "Pickup")</li>
+        <li>@Html.ActionLink("Status", "Status", "Pickup")</li>
+    </ul>
+</li>
+<li>@Html.ActionLink("About","")
+    <ul>
+        <li>@Html.ActionLink("User Views","Review","Home")</li>
+        <li>@Html.ActionLink("About us","About","Home")</li>
+    </ul>
+</li>
+</ul> 
+<section id="main">
+@RenderBody()
+<p style="position:relative; bottom:-30px; text-align:center">Copyright Nikhil Karje 2013. All Rights Reserved.</p>
+    </section>
+    </div>
+  
+</body>
+</html>

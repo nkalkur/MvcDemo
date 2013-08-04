@@ -1,0 +1,25 @@
+﻿@model MvcDemo.Models.PickupDB
+@{
+    ViewBag.Title = "Complaint";
+}
+
+<h2>Commends and Complaints</h2>
+
+ @using (Html.BeginForm())
+{
+     @Html.HiddenFor(model => model.ID)
+     @Html.HiddenFor(model => model.firstn)
+        @Html.HiddenFor(model => model.lastn)
+        @Html.HiddenFor(model => model.number)
+        @Html.HiddenFor(model => model.email)
+        @Html.HiddenFor(model => model.address)
+        @Html.HiddenFor(model => model.pincode)
+        @Html.HiddenFor(model => model.date)
+        @Html.HiddenFor(model => model.time)
+        @Html.HiddenFor(model => model.weight)
+         <div>
+         @Html.LabelFor(model => model.complaint):<br />
+         @Html.EditorFor(model => model.complaint)
+     </div>
+    <input type="submit" value="Submit" />
+}   

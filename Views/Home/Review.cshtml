@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MvcDemo.Models.PickupDB>
+@{
+    ViewBag.Title = "Review";
+}
+
+<h2>Reviews</h2>
+
+<table>
+@foreach (var item in Model) {
+    if(item.complaint != null)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstn):
+        </td>
+        
+        <td>
+            "@Html.DisplayFor(modelItem => item.complaint)"
+        </td>
+        <td>
+    </tr>
+    }
+}
+    </table><br />
+
+@Html.ActionLink("Home", "Index")
